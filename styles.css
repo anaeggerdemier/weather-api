@@ -1,0 +1,263 @@
+/* Color Scheme */
+:root {
+  --bg_main: #ffffff; /* Main Background */
+  --text_med: #98c4d8; /* Medium Text */
+  --text_dark: #000000; /* Dark Text */
+  --accent_color: #ff8c00; /* Accent Color (Orange) */
+  --dark_accent: #002955; /* Darker Accent Color (Darker Blue) */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: normal;
+  border-radius: 8px; /* Add rounded borders to all elements */
+}
+
+body {
+  background-color: var(--dark_accent);
+  font: 1rem/1.6 "Open Sans", sans-serif;
+}
+
+a {
+  color: var(--accent_color);
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: var(--accent_color);
+}
+
+/* Buttons */
+button,
+input[type="submit"] {
+  cursor: pointer;
+  border: none;
+  background: var(--accent_color);
+  color: #ffffff; /* Texto branco */
+  padding: 12px 20px;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona sombra para efeito de elevação */
+}
+
+button:hover,
+input[type="submit"]:hover {
+  background: var(--dark_accent);
+  padding-right: 20px;
+}
+
+input {
+  -webkit-appearance: none;
+  border: none;
+  border-bottom: 1px solid var(--bg_main);
+  padding: 5px 10px;
+}
+
+input::placeholder {
+  color: var(--bg_main); 
+}
+
+/* Main Banner */
+.top-banner {
+  background-color: var(--dark_accent);
+  padding: 30px;
+}
+
+.heading {
+  font-weight: bold;
+  font-size: 3.5rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 20px;
+}
+
+/* City List */
+.ajax-section {
+  margin: 40px 0 20px;
+}
+
+.city {
+  padding: 20px;
+  border-radius: 10px;
+  background: var(--bg_main);
+  color: var(--bg_main);
+  position: relative;
+}
+
+.city::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 1px;
+  background: var(--bg_main);
+}
+
+.city h2 {
+  font-size: 1.6rem;
+  margin-bottom: 5px;
+}
+
+.city p {
+  font-size: 1.2rem;
+}
+
+.api a {
+  color: var(--accent_color); /* Orange */
+  text-decoration: none; /* Remove default underline */
+  transition: color 0.3s ease-in-out; /* Add smooth transition for color change */
+}
+
+/* Change link text color when hovering */
+.api a:hover {
+  color: var(--dark_accent); /* Set desired color when hovering over link */
+}
+
+/* Add this rule to center weather icon */
+ul.cities {
+  text-align: center;
+}
+
+h1 {
+  color: var(--bg_main);
+}
+
+p {
+  color: var(--bg_main);
+}
+
+.error-box {
+  background-color: var(--accent_color);
+  color: var(--text_light);
+}
+
+.city-temp {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-top: 10px;
+  color: var(--text_med);
+}
+
+.city-name sup {
+  padding: 0.2em 0.6em;
+  border-radius: 20px;
+  color: var(--bg_main);
+  background: var(--bg_main);
+}
+
+/* Footer */
+.page-footer {
+  text-align: right;
+  font-size: 1rem;
+  color: var(--text_light);
+  margin-top: 40px;
+}
+
+.page-footer span {
+  color: var(--accent_color);
+}
+
+/* Media Queries */
+@media screen and (max-width: 1000px) {
+  body {
+    padding: 15px;
+  }
+
+  .ajax-section .cities {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .heading,
+  .ajax-section .city-temp {
+    font-size: 2rem;
+  }
+
+  .ajax-section {
+    margin-top: 20px;
+  }
+
+  .top-banner form {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .top-banner form input,
+  .top-banner form button {
+    width: 100%;
+  }
+
+  .top-banner form button {
+    margin: 20px 0 0 0;
+  }
+
+  .top-banner form .msg {
+    position: static;
+    max-width: none;
+    min-height: 0;
+    margin-top: 10px;
+  }
+
+  .ajax-section .cities {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    padding: 10px;
+  }
+
+  .ajax-section .cities {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* API Key Banner */
+.api {
+  background: var(--text_med); /* Background color */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.api-icon {
+  margin-right: 20px; /* Spacing between icon and text */
+}
+
+.api-info {
+  flex-grow: 1; /* Allows text to stretch across remaining width */
+}
+
+.api-close {
+  cursor: pointer; /* Change cursor when hovering over button */
+}
+
+.api a {
+  color: var(--accent_color); 
+  transition: color 0.3s ease-in-out;
+}
+
+.api a:hover {
+  color: var(--dark_accent); /* Text color when hovering */
+}
+
+.weather-result {
+  background: var(--bg_main); 
+  position: fixed;
+  bottom: 0; 
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  text-align: -webkit-match-parent;
+  text-align: inherit; 
+}
