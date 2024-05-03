@@ -2,6 +2,9 @@
 
 This is a simple weather application that allows you to search for weather by city. 🌈☀️🌧️❄️🌫️ 
 
+![Alt Text]("C:\Users\anaeg\Downloads\Vídeo sem título ‐ Feito com o Clipchamp (1).gif")
+
+
 ## Technologies Used
 
 - HTML
