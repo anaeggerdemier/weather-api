@@ -2,7 +2,7 @@
 
 This is a simple weather application that allows you to search for weather by city. 🌈☀️🌧️❄️🌫️ 
 
-)
+<img src="https://github.com/anaeggerdemier/weather-api/blob/main/img/weather.gif?raw=true">
 
 
 ## Technologies Used
