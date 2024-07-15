@@ -1,10 +1,10 @@
 /* Color Scheme */
 :root {
-  --bg_main: #ffffff; /* Main Background */
-  --text_med: #98c4d8; /* Medium Text */
-  --text_dark: #000000; /* Dark Text */
-  --accent_color: #ff8c00; /* Accent Color (Orange) */
-  --dark_accent: #002955; /* Darker Accent Color (Darker Blue) */
+  --bg_main: #ffffff; 
+  --text_med: #98c4d8; 
+  --text_dark: #000000; 
+  --accent_color: #ff8c00; 
+  --dark_accent: #002955; 
 }
 
 * {
@@ -12,7 +12,7 @@
   padding: 0;
   box-sizing: border-box;
   font-weight: normal;
-  border-radius: 8px; /* Add rounded borders to all elements */
+  border-radius: 8px; 
 }
 
 body {
@@ -30,16 +30,16 @@ a:hover {
   color: var(--accent_color);
 }
 
-/* Buttons */
+
 button,
 input[type="submit"] {
   cursor: pointer;
   border: none;
   background: var(--accent_color);
-  color: #ffffff; /* Texto branco */
+  color: #ffffff;
   padding: 12px 20px;
   transition: 0.3s ease-in-out;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona sombra para efeito de elevação */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 button:hover,
@@ -59,7 +59,7 @@ input::placeholder {
   color: var(--bg_main); 
 }
 
-/* Main Banner */
+
 .top-banner {
   background-color: var(--dark_accent);
   padding: 30px;
@@ -72,7 +72,7 @@ input::placeholder {
   margin-bottom: 20px;
 }
 
-/* City List */
+
 .ajax-section {
   margin: 40px 0 20px;
 }
@@ -106,17 +106,17 @@ input::placeholder {
 }
 
 .api a {
-  color: var(--accent_color); /* Orange */
-  text-decoration: none; /* Remove default underline */
-  transition: color 0.3s ease-in-out; /* Add smooth transition for color change */
+  color: var(--accent_color);
+  text-decoration: none; 
+  transition: color 0.3s ease-in-out; 
 }
 
-/* Change link text color when hovering */
+
 .api a:hover {
-  color: var(--dark_accent); /* Set desired color when hovering over link */
+  color: var(--dark_accent); 
 }
 
-/* Add this rule to center weather icon */
+
 ul.cities {
   text-align: center;
 }
@@ -148,7 +148,7 @@ p {
   background: var(--bg_main);
 }
 
-/* Footer */
+
 .page-footer {
   text-align: right;
   font-size: 1rem;
@@ -160,7 +160,7 @@ p {
   color: var(--accent_color);
 }
 
-/* Media Queries */
+
 @media screen and (max-width: 1000px) {
   body {
     padding: 15px;
@@ -217,9 +217,9 @@ p {
   }
 }
 
-/* API Key Banner */
+
 .api {
-  background: var(--text_med); /* Background color */
+  background: var(--text_med); 
   position: fixed;
   top: 0;
   left: 0;
@@ -231,15 +231,15 @@ p {
 }
 
 .api-icon {
-  margin-right: 20px; /* Spacing between icon and text */
+  margin-right: 20px; 
 }
 
 .api-info {
-  flex-grow: 1; /* Allows text to stretch across remaining width */
+  flex-grow: 1; 
 }
 
 .api-close {
-  cursor: pointer; /* Change cursor when hovering over button */
+  cursor: pointer; 
 }
 
 .api a {
@@ -248,7 +248,7 @@ p {
 }
 
 .api a:hover {
-  color: var(--dark_accent); /* Text color when hovering */
+  color: var(--dark_accent); 
 }
 
 .weather-result {
