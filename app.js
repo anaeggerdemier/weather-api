@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p class="font-italic">Description: ${description}</p>
                 </div>
             `;
-            weatherResults.style.display = 'block'; // Garante que os resultados sejam exibidos
+            weatherResults.style.display = 'block'; 
         } else {
             console.error('Weather results element not found');
         }
@@ -61,15 +61,14 @@ document.addEventListener('DOMContentLoaded', () => {
     function fetchWeather(url, city) {
         showLoader(true);
 
-        // Dados simulados
         const mockData = {
             weather: [
                 { icon: '01d', description: 'Clear sky' }
             ],
-            main: { temp: 293.15 } // Temperatura em Kelvin
+            main: { temp: 293.15 } 
         };
 
-        // Simulação de delay para imitar uma chamada real à API
+        
         setTimeout(() => {
             const iconCode = mockData.weather[0].icon;
             const temperature = (mockData.main.temp - 273.15).toFixed(1);
@@ -77,21 +76,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
             updateWeatherResults(city, iconCode, temperature, description);
             showLoader(false);
-        }, 1000); // 1 segundo de atraso
+        }, 1000); 
     }
 
     function fetchWeatherByCoords(lat, lon) {
         showLoader(true);
 
-        // Dados simulados
         const mockData = {
             weather: [
                 { icon: '02d', description: 'Few clouds' }
             ],
-            main: { temp: 288.15 } // Temperatura em Kelvin
+            main: { temp: 288.15 } 
         };
 
-        // Simulação de delay para imitar uma chamada real à API
+       
         setTimeout(() => {
             const iconCode = mockData.weather[0].icon;
             const temperature = (mockData.main.temp - 273.15).toFixed(1);
@@ -99,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             updateWeatherResults('Current Location', iconCode, temperature, description);
             showLoader(false);
-        }, 1000); // 1 segundo de atraso
+        }, 1000);
     }
 
     form.addEventListener('submit', event => {
@@ -112,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        fetchWeather(null, city); // URL não é usada na simulação
+        fetchWeather(null, city); 
     });
 
     document.getElementById('locate-btn').addEventListener('click', () => {
