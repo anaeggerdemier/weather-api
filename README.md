@@ -1,6 +1,6 @@
 # Simple Weather Application
 
-**Simple Weather Application** is a web application developed as part of the **Alura Immersion Dev Challenge in partnership with Gemini**. This project allows users to check the weather forecast for a specific city or their current location. The application is built with HTML, CSS, and JavaScript, and uses simulated data to demonstrate the functionality of the application without exposing a real API.
+**Simple Weather Application** is a web application developed as part of the Alura Immersion Dev Challenge in partnership with Gemini. This project allows users to check the weather forecast for a specific city or their current location. Built with HTML, CSS, and JavaScript, the application employs simulated data to showcase its functionality. For privacy and security reasons, the publicly available version does not use the actual API but demonstrates the application’s capabilities with mock data.
 
 ## Description
 
