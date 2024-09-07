@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A simple weather application that allows you to search for weather by city.">
+    <meta name="keywords" content="Weather, Weather App, Weather Forecast">
+    <meta name="author" content="Ana Caroline Demier">
+    <title>Simple Weather Application</title>
+    <link rel="icon" href="https://via.placeholder.com/32x32.png?text=Favicon" type="image/png">
+    <!-- Fonts and Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light custom-nav" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a class="navbar-brand" href="#">Weather App</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon" aria-hidden="true"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#" role="link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" role="link">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            More
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#" role="link">Lorem ipsum</a></li>
+                            <li><a class="dropdown-item" href="#" role="link">Sed do eiusmod</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" role="link">Excepteur sint</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Main Content -->
+    <main class="container mt-4" role="main">
+        <section class="weather-container text-center mb-4" aria-labelledby="weather-section-heading">
+            <!-- API Info Section -->
+            <div id="api-info" class="mb-4">
+                <img src="https://bmcdn.nl/assets/weather-icons/v2.0/fill/clear-day.svg" alt="Clear day weather icon" height="48" role="img">
+                <h2 id="weather-section-heading">OpenWeather API</h2>
+                <p><a href="https://home.openweathermap.org/users/sign_up" target="_blank" rel="noopener noreferrer">Get your free key here!</a></p>
+            </div>
+            <!-- Error Box -->
+            <div id="error-box" class="alert alert-danger d-none" role="alert" aria-live="assertive"></div>
+            <!-- Search Form -->
+            <form id="search-form" class="mb-4" aria-labelledby="search-form-heading">
+                <h3 id="search-form-heading" class="visually-hidden">Search for Weather</h3>
+                <div class="input-group">
+                    <input type="text" id="city-search" class="form-control" aria-label="Search for a city" placeholder="Enter city name" required>
+                    <button type="submit" class="btn btn-outline-primary" aria-label="Search" id="search-btn">
+                        <i class="fas fa-search" aria-hidden="true"></i> Search
+                        <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                    </button>
+                    <button type="button" id="locate-btn" class="btn btn-outline-primary" aria-label="Use my location">Use My Location</button>
+                </div>
+            </form>
+            <!-- Weather Results -->
+            <div id="weather-results" class="mt-4" role="region" aria-labelledby="weather-results-heading"></div>
+            <!-- Weekly Forecast (Hidden Initially) -->
+            <div id="weekly-forecast" class="mt-4 d-none" role="region" aria-labelledby="weekly-forecast-heading"></div>
+            <!-- Loader -->
+            <div class="loader d-none" role="status" aria-live="polite"></div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="text-center py-4" role="contentinfo">
+        <p>© 2024 DEV Immersion Challenge - Alura and Google Gemini | Ana Caroline Demier</p>
+    </footer>
+    <!-- JS and Bootstrap Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./app.js"></script>
+</body>
+</html>
