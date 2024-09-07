@@ -59,6 +59,6 @@ There is no external API documentation for this project. All details are in the 
 ## Credits
 
 - **Immersion Dev Challenge** - [Alura](https://www.alura.com.br/) in partnership with [Gemini](https://gemini.google.com/app)
-- **Developer**: Ana Caroline Demier
+- **Developer**: [Ana Caroline Demier](www.linkedin.com/in/anaeggerdemier)
 
 
