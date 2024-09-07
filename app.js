@@ -25,15 +25,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const errorBox = document.getElementById('error-box');
     const loader = document.querySelector('.loader');
 
-    function showWeatherResults() {
-        weatherResults.style.display = 'block';
-    }
+    form.addEventListener('submit', event => {
+        event.preventDefault();
+        errorBox.classList.add('d-none');
+        const city = document.getElementById('city-search').value.trim();
+
+        if (!/^[a-zA-Z\s]+$/.test(city)) {
+            errorBox.textContent = 'Please enter a valid city name.';
+            errorBox.classList.remove('d-none');
+            return;
+        }
+
+        fetchWeather(city);
+        showWeatherResults();
+    });
 
     function fetchWeather(city) {
         const apiKey = 'f8f87f167d2b7b59f54ca69f4fb82e2b';
         const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
 
-        loader.classList.remove('d-none'); 
+        loader.classList.remove('d-none');
 
         fetch(apiUrl)
             .then(response => {
@@ -42,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .then(data => {
                 const iconCode = data.weather[0].icon;
-                const temperature = (data.main.temp - 273.15).toFixed(1); 
+                const temperature = (data.main.temp - 273.15).toFixed(1);
                 const description = data.weather[0].description;
 
                 weatherResults.innerHTML = `
@@ -53,7 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         <p class="font-italic">Description: ${description}</p>
                     </div>
                 `;
-                showWeatherResults(); 
             })
             .catch(error => {
                 console.error('Error:', error);
@@ -61,16 +71,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 errorBox.classList.remove('d-none');
             })
             .finally(() => {
-                loader.classList.add('d-none'); 
+                loader.classList.add('d-none');
             });
     }
 
-    
     function fetchWeatherByCoords(lat, lon) {
-        const apiKey = 'f8f87f167d2b7b59f54ca69f4fb82e2b'; 
+        const apiKey = 'f8f87f167d2b7b59f54ca69f4fb82e2b';
         const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
 
-        loader.classList.remove('d-none'); 
+        loader.classList.remove('d-none');
 
         fetch(apiUrl)
             .then(response => {
@@ -79,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .then(data => {
                 const iconCode = data.weather[0].icon;
-                const temperature = (data.main.temp - 273.15).toFixed(1); 
+                const temperature = (data.main.temp - 273.15).toFixed(1);
                 const description = data.weather[0].description;
 
                 weatherResults.innerHTML = `
@@ -90,7 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         <p class="font-italic">Description: ${description}</p>
                     </div>
                 `;
-                showWeatherResults(); 
             })
             .catch(error => {
                 console.error('Error:', error);
@@ -98,32 +106,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 errorBox.classList.remove('d-none');
             })
             .finally(() => {
-                loader.classList.add('d-none'); 
+                loader.classList.add('d-none');
             });
     }
 
-    // "Search"
-    form.addEventListener('submit', event => {
-        event.preventDefault();
-        errorBox.classList.add('d-none'); 
-        const city = document.getElementById('city-search').value.trim();
+    function showWeatherResults() {
+        weatherResults.style.display = 'block';
+    }
 
-        if (!/^[a-zA-Z\s]+$/.test(city)) {
-            errorBox.textContent = 'Please enter a valid city name.';
-            errorBox.classList.remove('d-none');
-            return;
-        }
-
-        fetchWeather(city);
-    });
-
-    // "Use My Location"
     document.getElementById('locate-btn').addEventListener('click', () => {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(position => {
                 const lat = position.coords.latitude;
                 const lon = position.coords.longitude;
-                fetchWeatherByCoords(lat, lon); 
+                fetchWeatherByCoords(lat, lon);
+                showWeatherResults();
             }, error => {
                 console.error('Geolocation error:', error);
                 errorBox.textContent = 'Failed to get your location. Please try again later.';
