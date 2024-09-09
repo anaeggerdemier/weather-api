@@ -59,8 +59,8 @@ p {
 
 .weather-container {
   background: rgba(255, 255, 255, 0.15);
-  -webkit-backdrop-filter: blur(10px); /* Safari & iOS support */
-  backdrop-filter: blur(10px); /* Standard property */
+  -webkit-backdrop-filter: blur(10px); 
+  backdrop-filter: blur(10px);
   border-radius: 12px;
   padding: 40px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
